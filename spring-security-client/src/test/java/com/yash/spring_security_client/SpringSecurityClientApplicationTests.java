@@ -2,12 +2,12 @@ package com.yash.spring_security_client;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestPropertySource;
 
-@SpringBootTest
-class SpringSecurityClientApplicationTests {
+import com.yash.client.SpringSecurityClientApplication;
 
-	@Test
-	void contextLoads() {
-	}
-
+@SpringBootTest(classes = SpringSecurityClientApplication.class)
+public class SpringSecurityClientApplicationTests {
 }
+
+
