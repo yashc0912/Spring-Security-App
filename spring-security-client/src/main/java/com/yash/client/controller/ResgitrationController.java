@@ -11,7 +11,7 @@ import com.yash.client.event.RegistrationCompleteEvent;
 import com.yash.client.model.UserModel;
 import com.yash.client.service.UserService;
 
-import jakarta.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class ResgitrationController {
