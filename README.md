@@ -2,99 +2,90 @@
 
 # Spring Security Project with OAuth 2.0 (Planned)
 
-Overview
+## Overview
 
 This project is a Spring Security-based authentication and authorization system, designed as a client-server architecture. It includes essential security features like user authentication, authorization, and password reset. OAuth 2.0 integration is planned for future development.
 
 ## Features Implemented
 
-User Registration & Authentication (Spring Security)
+- User Registration & Authentication (Spring Security)
+- Password Reset Functionality
+- Client-Server Communication
+- Token-Based Authentication (JWT or Session-Based)
 
-Password Reset Functionality
+## Planned Features
 
-Client-Server Communication
-
-Token-Based Authentication (JWT or Session-Based)
-
-Planned Features
-
-OAuth 2.0 Implementation
-
-Role-Based Access Control (RBAC)
+- OAuth 2.0 Implementation
+- Role-Based Access Control (RBAC)
 
 ## Technologies Used
 
-Java 11
-
-Spring Boot
-
-Spring Security
-
-OAuth 2.0 (Planned)
-
-JWT (If Implemented)
-
-MySQL (Database)
-
-H2 Database (For Testing)
-
+- Java 11
+- Spring Boot
+- Spring Security
+- OAuth 2.0 (Planned)
+- JWT (If Implemented)
+- MySQL (Database)
+- H2 Database (For Testing)
 
 ## API Reference
 
-#### Register User
+### Register User
 ```http
-  POST /register
+POST /register
 ```
+| Parameter | Type     | Description |
+| :-------- | :------- | :---------- |
+| `user`    | `string` | Register a new user and assign a token |
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `user`    | `string` | Register a new user and asign a token   |
-
-#### Resend Token
+### Resend Token
 ```http
-  POST /resendVerifyToken?token={token}
+POST /resendVerifyToken?token={token}
 ```
+| Parameter | Type     | Description |
+| :-------- | :------- | :---------- |
+| `token`   | `string` | Resends the same token to the user via email at console level |
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `token`    | `string` | Resends the same token to user via email at console leve    |
-
-#### Verify Token
+### Verify Token
 ```http
-  POST /verifyRegistration?token={token}
+POST /verifyRegistration?token={token}
 ```
+| Parameter | Type     | Description |
+| :-------- | :------- | :---------- |
+| `token`   | `string` | Verify the token from database |
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `token`    | `string` | Verify the token from databse    |
-
-#### Reset password
+### Reset Password
 ```http
-  POST /resetPassword
+POST /resetPassword
 ```
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `email`    | `string` | reset the user password if enabled    |
+| Parameter | Type     | Description |
+| :-------- | :------- | :---------- |
+| `email`   | `string` | Reset the user password if enabled |
 
-#### Reset password
+### Save Password
 ```http
-  POST /savePassword?token={token}
+POST /savePassword?token={token}
 ```
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `token`    | `string` | save the new token password   |
+| Parameter | Type     | Description |
+| :-------- | :------- | :---------- |
+| `token`   | `string` | Save the new token password |
 
-
-
-
+### Change Password
+```http
+POST /changePassword
+```
+| Parameter      | Type     | Description |
+| :------------ | :------- | :---------- |
+| `email`       | `string` | User's email address |
+| `oldPassword` | `string` | User's current password |
+| `newPassword` | `string` | User's new password |
 
 ## Clone the repository:
 
-
+```sh
 git clone https://github.com/yashc0912/Spring-Security-App.git
+```
 
-
-Contribution & Future Development
+## Contribution & Future Development
 
 Contributions are welcome! Future updates will include OAuth 2.0 authentication and additional security features.
-
